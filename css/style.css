@@ -1,0 +1,783 @@
+@font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/outfit-v11-latin-regular.woff2') format('woff2'),
+        url('/fonts/outfit-v11-latin-regular.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Outfit-Bold';
+    src: url('/fonts/Outfit-Bold.woff2') format('woff2'),
+        url('/fonts/Outfit-Bold.woff') format('woff');
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+
+:root {
+    --color-black: rgba(34, 34, 34, 1);
+    --color-white: rgba(255, 255, 255, 1);
+    --color-btn: rgba(47, 47, 47, 1);
+    --color-green: rgba(130, 203, 172, 1);
+    --color-ava: rgba(250, 246, 246, 0.8);
+    --color-red: rgba(255, 127, 150, 1);
+    --color-yellow: rgba(234, 215, 27, 1);
+    --color-placeholder: rgba(47, 47, 47, 0.36);
+    --box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, 
+                rgba(17, 17, 26, 0.1) 0px 8px 24px, 
+                rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    --input-background: rgba(246, 246, 246, 1);
+    --backgraund-eyee: rgba(168, 193, 216, 0.2);
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*::before,
+*::after,
+* {
+    box-sizing: inherit;
+}
+
+body {
+    max-width: 1470px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: 'Outfit', sans-serif;
+    color: var(--color-black);
+    outline: 2px solid green;
+    letter-spacing: 0.48px;
+}
+
+h2 {
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 64px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 36px;
+}
+
+h4 {
+    font-size: 35px;
+    font-family: 'Outfit-Bold', sans-serif;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+a:visited {
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1230px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    outline: 2px solid blue;
+}
+
+.hidden {
+    display: none;
+}
+
+.nav-pills .nav-link,
+.nav-pills .nav-link.active,
+.btn {
+    width: 144px;
+    height: 40px;
+    font-size: 13px;
+    color: var(--color-white);
+    font-weight: 400;
+    background-color: var(--color-btn);
+}
+
+.nav-pills .nav-link,
+.btn:hover {
+    border: 1px solid var(--color-btn);
+    transition: background-color 0.25s linear;
+}
+
+.social_icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Header */
+.header-container,
+.header-left,
+.header-right,
+.header-list,
+.header-nav {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container {
+    height: 68px;
+    margin-bottom: 63px;
+    box-shadow: 0px -4px 19px 0px rgba(0, 0, 0, 0.03);
+    border-radius: 30px;
+}
+
+.header-logo {
+    margin-right: 49px;
+    margin-left: 28px;
+    width: 94px;
+    height: 31px;
+}
+
+.header-item {
+    margin-right: 48px;
+    margin-top: auto;
+    margin-bottom: auto;
+    color: var(--color-black);
+    font-style: 15px;
+    font-weight: 400;
+    text-wrap: nowrap;
+}
+
+.social {
+    margin-right: 19px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.social:hover,
+.social:focus {
+    background: linear-gradient(rgba(234, 215, 27, .5), 
+    rgba(255, 127, 150, .5),
+    rgba(130, 203, 172, .5));
+}
+
+.nav-pills .nav-link,
+.nav-pills .nav-link.active,
+.header-btn {
+    border-radius: 20px;
+}
+
+/* Hero */
+.hero-container {
+    min-height: 740px;
+    padding-top: 50px 0 180px;
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 49%;
+    flex-wrap: wrap;
+}
+
+.hero-left,
+.hero-right {
+    width: 49%;
+}
+
+.hero-left {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.hero-text__green {
+    margin-bottom: 1px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--color-green);
+}
+
+.hero-text {
+    max-width: 420px;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 35px;
+}
+
+.hero-title {
+    min-width: 538px;
+    margin-bottom: 28px;
+    font-size: 64px;
+    line-height: 64px;
+    font-weight: 400;
+}
+
+.hero-right {
+    padding-top: 35px;
+    padding-bottom: 160px;
+    padding-left: 21px;
+    position: relative;
+}
+
+.hero-ava__boy {
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+}
+
+.hero-ava__girl {
+    border-radius: 50%;
+    width: 41px;
+    height: 41px;
+}
+
+.hero-boy {
+    position: relative;
+}
+
+.hero-about {
+    width: 105px;
+    height: 33px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: none;
+    border-radius: 30px;
+    position: absolute;
+    left: -45px;
+    top: 5%;
+    background-color: var(--color-ava);
+}
+
+.hero-name,
+.hero-post {
+    font-size: 11px;
+    line-height: 1;
+    font-weight: 400;
+    color: var(--color-btn);
+}
+
+.hero-post {
+    font-size: 9px;
+}
+
+.hero-girl {
+    position: absolute;
+    right: 0;
+    top: 20%;
+}
+
+.girl > .hero-name {
+    font-size: 16px;
+}
+
+.girl > .hero-post {
+    font-size: 13px;
+}
+
+.hero-girl > .hero-about {
+    width: 159px;
+    height: 55px;
+    top: 82%;
+    left: -85px;
+}
+
+/* carousel */
+.swiper {
+    width: 100%;
+    height: 152px;
+  }
+
+.swiper-slide {
+    width: 152px !important;
+    height: 152px;
+}
+
+.carousel-container {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+}
+
+/* About */
+.about-container {
+    margin-bottom: 81px;
+    padding-top: 87px;
+}
+
+.about-title {
+    margin-bottom: 25px;
+}
+
+.about-title__small {
+    max-width: 610px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.nav-pills {
+    padding-top: 40px;
+    padding-bottom: 35px;
+}
+
+.nav-pills .nav-link {
+    margin-right: 8px;
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.about-tab__container {
+    min-height: 459px;
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 49%;
+}
+
+.about-tab__container > * {
+    width: 50%;
+}
+
+.about-post {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    margin-top: 47px;
+    margin-bottom: 19px;
+    color: var(--color-red);
+}
+
+.about-tab__title {
+    margin-bottom: 7px;
+    font-size: 35px;
+    line-height: 36px;
+    font-weight: 400;
+}
+
+.about-text {
+    padding-right: 75px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+/* Work */
+.work-top,
+.work-bottom {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    margin-bottom: 84px;
+}
+
+.work-bottom {
+    justify-content: space-between;
+    margin-bottom: 120px;
+}
+
+.work-list,
+.work-sketch__description,
+.work-sketch {
+    width: 50%;
+}
+
+.work-sketch__inner {
+    width: 100%;
+}
+
+.work-title {
+    margin-bottom: 38px;
+    text-align: left;
+}
+
+.work-sketch__description {
+    padding: 57px 0 62px 48px;
+}
+
+.work-text {
+    margin-bottom: 32px;
+}
+
+.work-btn {
+    height: 44px;
+    width: 166px;
+    display: block;
+    margin-left: auto;
+    font-family: 'Outfit-Bold', sans-serif;
+    font-weight: 700;
+}
+
+.work-list {
+    padding: 90px 90px 0 64px;
+    margin-bottom: 0;
+}
+
+ol {
+    /* USEFULL EXAMPLE */
+    /* list-style-type: decimal-leading-zero; */
+    /* list-style-position: inside; */
+    list-style-type: none;
+    counter-reset: my-counter;
+}
+
+ol li {
+    position: relative;
+}
+
+li::before {
+    /* USEFULL EXAMPLE */
+    /* content: counter(my-counter); */
+    content: counters(my-counter, "." , decimal-leading-zero);
+    counter-increment: my-counter;
+    top: -40px;
+    left: 0;
+    width: 61px;
+    height: 35px;
+    border-radius: 30px;
+    color: var(--color-white);
+    background-color: var(--color-green);
+    position: absolute;
+    text-align: center;
+}
+
+li:nth-child(2):before {
+    background-color: var(--color-red);
+}
+
+li:nth-child(3):before {
+    background-color: var(--color-yellow);
+}
+
+.work-item__title {
+    margin-bottom: 13px;
+    font-size: 36px;
+    font-family: 'Outfit-Bold', sans-serif;
+    font-weight: 700;
+    color: var(--color-btn);
+}
+
+.work-bottom__img {
+    max-width: 596px;
+}
+
+.work-item > .work-text {
+    margin-bottom: 72px;
+}
+
+/* Staf */
+.staf {
+    margin-bottom: 71px;
+}
+
+/* Collections */
+.collections {
+    margin-bottom: 80px;
+}
+
+.collections-list {
+    margin-top: 73px;
+    margin-bottom: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.collections-item {
+    /* max-width: 33%; */
+    border-radius: 30px;
+}
+
+.collections-item:hover {
+    box-shadow: var(--box-shadow);
+    transition: box-shadow 0.4s linear;
+}
+
+.collections__link {
+    font-family: 'Outfit-Bold', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.btn-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.collections-btn {
+    font-family: 'Outfit-Bold', sans-serif;
+    font-weight: 700;
+}
+
+.collections-subscribe {
+    margin-top: 29px;
+    padding-left: 50px;
+    margin-bottom: 37px;
+}
+
+/* NFT */
+.nft-container {
+    margin-bottom: 40px;
+}
+
+.nft-list {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nft-items {
+    margin-bottom: 40px;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nft-name {
+    margin-right: 8px;
+    font-size: 16px;
+    color: var(--color-btn);
+}
+
+.nft-number {
+    font-family: 'Outfit-Bold', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.nft-number + img {
+    margin-right: 8px;
+}
+
+.nft-eyee__link {
+    width: 38px;
+    height: 38px;
+    text-align: center;
+}
+
+.nft-eyee__link {
+    width: 38px;
+    height: 38px;
+    padding: 10px;
+    text-align: center;
+    fill: rgba(0, 0, 0, 0.7);
+    background-color: var(--backgraund-eyee);
+}
+
+.nft-icon__eyee {
+    width: 18px;
+    height: 18px;
+}
+
+.nft-icon__lock {
+    width: 12px;
+    height: 16px;
+    fill: var(--color-white);
+}
+
+.nft-lock__link {
+    width: 38px;
+    height: 38px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: var(--color-red);
+    padding: 11px 13px;
+}
+
+/* Faq */
+.faq-container {
+    padding-bottom: 62px;
+    margin-bottom: 40px;
+}
+
+.faq-title {
+    text-align: left;
+    margin-left: 64px;
+}
+
+.accordion {
+    margin-left: 64px;
+    margin-right: 64px;
+    padding-left: 26px;
+     margin-top: 25px;
+}
+
+.accordion-button {
+    font-size: 22px;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: rgba(46,207,31,0.1);
+    box-shadow: none;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.accordion-item {
+    border: none;
+    font-size: 18px;
+}
+
+.accordion-button:focus {
+    box-shadow: 0px 0px 7px 6px rgba(46,207,31,0.1);
+    box-shadow:none;
+}
+
+.accordion-button::after {
+    background-image: url('/img/faq-sign.svg')
+}
+
+/* Footer */
+.footer-container {
+    padding: 96px 64px 25px 64px;
+}
+
+.footer-ul {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-social {
+    display: flex;
+    align-items: flex-start;
+}
+
+.footer-item:last-child {
+    max-width: 460px;
+}
+
+.footer-logo {
+    margin-right: 63px;
+}
+
+.footer-social__title {
+    margin-top: 45px;
+    margin-bottom: 19px;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.48px;
+}
+
+.footer-title__list {
+    gap: 8px;
+}
+
+.footer-title {
+    margin-bottom: 25px;
+    color: #2F2F2F;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.footer-title__item {
+    color: inherit;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: var(--color-black);
+  -webkit-box-shadow: 0 0 0px 1000px var(--input-background) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.footer-form > .about-tab__title {
+    line-height: 1;
+    text-align: left;
+}
+
+.footer-form__inner {
+    height: 40px;
+}
+
+.footer-text {
+    padding-right: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0.48px;
+}
+
+.footer-input {
+    min-width: 327px;
+    height: 40px;
+    padding: 12px 32px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--input-background);
+    gap: 8px;
+}
+
+.footer-input::placeholder {
+    color: var(--color-placeholder);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.48px;
+    line-height: 1;
+}
+
+.footer-btn {
+    width: 79px;
+    height: 40px;
+    font-family: "Outfit-Bold", sans-serif;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: none;
+    transform: translateY(-1px);
+}
+
+.footer-copiright {
+    margin-top: 118px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.footer-copiright > small {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.48px;
+}
+
+small > a,
+small > a:visited {
+    color: var(--color-red);
+}
