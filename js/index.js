@@ -21,6 +21,10 @@ window.addEventListener("DOMContentLoaded", function() {
         if (event.target.window.innerWidth > 1300) responseNft();
         if (event.target.window.innerWidth <= 1024 && event.target.window.innerWidth > 724) responseNft2();
         if (event.target.window.innerWidth < 768) responseNft3();
+
+        if (event.target.window.innerWidth > 1300) responseCollection();
+        if (event.target.window.innerWidth <= 1024 && event.target.window.innerWidth > 724) responseCollection2();
+        if (event.target.window.innerWidth < 768) responseCollection3();
     })
 
     function openCatalog() {
@@ -47,6 +51,42 @@ window.addEventListener("DOMContentLoaded", function() {
     }
 
     responseCollection()
+
+    function responseCollection2() {
+        if (window.innerWidth <= 1024 && window.innerHeight > 768) {
+            btnViewAllCollection.classList.add('hidden');
+            
+            collectionCards.forEach((item, index) => {
+                item.classList.add('hidden')
+                if (index < 4) {
+                    item.classList.remove('hidden')
+                } else if (index > 1) {
+                    btnViewAllCollection.classList.remove('hidden');
+                }
+                openCatalogNft()
+            })
+        }
+    }
+
+    responseCollection2()
+
+    function responseCollection3() {
+        if (window.innerWidth < 768) {
+            btnViewAllCollection.classList.add('hidden');
+            
+            collectionCards.forEach((item, index) => {
+                item.classList.add('hidden')
+                if (index < 2) {
+                    item.classList.remove('hidden')
+                } else if (index > 1) {
+                    btnViewAllCollection.classList.remove('hidden');
+                }
+                openCatalogNft()
+            })
+        }
+    }
+
+    responseCollection3()
 
     /* NFT View More */
     const btnViewAllNft = this.document.querySelector('.nft-btn')

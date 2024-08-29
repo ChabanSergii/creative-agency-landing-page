@@ -23,6 +23,7 @@
     --color-green: rgba(130, 203, 172, 1);
     --color-ava: rgba(250, 246, 246, 0.8);
     --color-red: rgba(255, 127, 150, 1);
+    --color-red-hover: rgba(239, 104, 129, 1);
     --color-yellow: rgba(234, 215, 27, 1);
     --color-placeholder: rgba(47, 47, 47, 0.36);
     --box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, 
@@ -30,6 +31,7 @@
                 rgba(17, 17, 26, 0.1) 0px 16px 56px;
     --input-background: rgba(246, 246, 246, 1);
     --backgraund-eyee: rgba(168, 193, 216, 0.2);
+    --backgraund-eyee-hover: rgba(168, 193, 216, 0.5);
     --border-radius: 30px;
 }
 
@@ -106,7 +108,7 @@ img {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .nav-pills .nav-link,
@@ -188,9 +190,31 @@ img {
     border-radius: 20px;
 }
 
+.burger-menu {
+    width: 26px;
+    height: 26px;
+    box-sizing: border-box;
+    padding: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    border: none;
+    background: transparent;
+}
+
+.burger-menu > * {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-black);
+}
+
+.burger-inner {
+    display: none;
+}
+
 /* Hero */
 .hero-container {
-    min-height: 740px;
+    max-height: 740px;
     padding-top: 50px 0 180px;
     display: flex;
     justify-content: space-between;
@@ -249,6 +273,18 @@ img {
     border-radius: 50%;
     width: 41px;
     height: 41px;
+    border-radius: var(--border-radius);
+}
+
+.hero-img__boy {
+    width: 325px;
+    height: 325px;
+    border-radius: var(--border-radius);
+}
+
+.hero-img__girl {
+    width: 410px;
+    height: 410px;
 }
 
 .hero-boy {
@@ -262,7 +298,7 @@ img {
     justify-content: space-evenly;
     align-items: center;
     border: none;
-    border-radius: 30px;
+    border-radius: var(--border-radius);
     position: absolute;
     left: -45px;
     top: 5%;
@@ -508,9 +544,11 @@ li:nth-child(3):before {
 }
 
 .collections-item {
-    /* max-width: 33%; */
     border-radius: 30px;
     margin-bottom: 63px;
+    flex: 0 1 auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .collections-item:hover {
@@ -606,9 +644,9 @@ li:nth-child(3):before {
 
 .nft-eyee__link:hover,
 .nft-eyee__link:focus {
-    fill: var(--color-white);
-    background-color: var(--color-black);
-    transition: fill 0.2s ease-in;
+    fill: var(--color-black);
+    background-color: var(--backgraund-eyee-hover);
+    transition: fill 0.2s ease-in, background-color 0.2s ease-in;
 }
 
 .nft-icon__eyee {
@@ -624,10 +662,10 @@ li:nth-child(3):before {
     padding: 11px 13px;
 }
 
-.nft-lock__link:hover>.nft-icon__lock,
-.nft-lock__link:focus>.nft-icon__lock {
-    fill: var(--color-black);
-    transition: fill 0.2s ease-in;
+.nft-lock__link:hover,
+.nft-lock__link:focus {
+    background-color: var(--color-red-hover);
+    transition: background-color 0.2s ease-in;
 }
 
 .nft-icon__lock {
@@ -636,7 +674,6 @@ li:nth-child(3):before {
     fill: var(--color-white);
     transform: translateY(-3px);
 }
-
 
 /* Faq */
 .faq-container {
@@ -686,7 +723,7 @@ li:nth-child(3):before {
     padding: 96px 64px 25px 64px;
 }
 
-.footer-ul {
+.footer-list {
     margin-bottom: 0;
     display: flex;
     justify-content: space-between;
@@ -812,4 +849,135 @@ select:-webkit-autofill:focus {
 small > a,
 small > a:visited {
     color: var(--color-red);
+}
+
+
+@media (max-width:1024px) {
+    /* Hero */
+    .hero-left {
+        z-index: 10;
+    }
+
+    .hero-right {
+        z-index: 5;
+    }
+
+    .hero-img__girl {
+        width: 325px;
+        height: 325px;
+    }
+
+    /* Footer */
+    .footer-list {
+        flex-wrap: wrap;
+    }
+
+    .footer-item {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width:768px) {
+    /* Hero */
+    .hero-left {
+        margin-top: 10%;
+        margin-bottom: 0;
+    }
+
+    .hero-title {
+        margin-bottom: 28px;
+        font-size: 44px;
+        line-height: 44px;
+        font-weight: 400;
+    }
+
+    .hero-right {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+
+    .hero-img__girl {
+        width: 225px;
+        height: 225px;
+        margin-top: 30%;
+    }
+
+    /* About */
+    h2 {
+        font-size: 34px;
+        line-height: 34px;
+    }
+
+    .about-ava {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    /* Work */
+    .work-list {
+        padding: 20px 20px 0 14px;
+    }
+
+    .work-bottom__img {
+        max-width: 306px;
+        margin-bottom: auto;
+    }
+
+    /* Faq */
+    .faq-title {
+        text-align: center;
+    }
+
+    .accordion {
+        margin-left: 14px;
+        margin-right: 14px;
+        padding-left: 0;
+    }
+}
+
+@media (max-width:425px) {
+    /* Header */
+    .burger-menu {
+        display: flex;
+    }
+
+    .header-logo {
+        margin-right: 49px;
+        margin-left: 18px;
+        width: 54px;
+    }
+
+    .header-btn {
+        display: none;
+    }
+
+    .header-left {
+        order: 1;
+    }
+
+    .header-nav {
+        position: relative;
+    }
+
+    .header-item::before {
+        display: none;
+    }
+
+    .social {
+        margin-right: 5px;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+    }
+
+    .burger-inner {
+        display: block;
+    }
+
+    .header-nav > .header-list {
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
 }
