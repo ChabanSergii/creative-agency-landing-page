@@ -152,9 +152,12 @@ img {
     border-radius: 30px;
 }
 
-.header-logo {
+.header-logo__link {
     margin-right: 49px;
     margin-left: 28px;
+}
+
+.header-logo {
     width: 94px;
     height: 31px;
 }
@@ -878,6 +881,76 @@ small > a:visited {
 }
 
 @media (max-width:768px) {
+    /* fix-bug */
+    .header-item::before {
+        display: none;
+    }
+
+    /* Header */
+    .header-left {
+        flex: 1 1 100%;
+    }
+
+    .header-logo__link {
+        margin-left: auto;
+        margin-right: auto;
+        order: 1;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .menu__btn {
+        display: flex;
+    }
+    
+    .header-nav {
+        position: relative;
+    }
+    
+    .header-btn {
+        display: none;
+    }
+
+    .burger-inner {
+        display: block;
+    }
+
+    .header-nav > .header-list {
+        width: 300px;
+        padding: 25px 0;
+        font-weight: 400;
+        flex-direction: column;
+        position: absolute;
+        top: -37px;
+        left: 27vw;
+        transform: translateY(-140%);
+        background-color: var(--color-green);
+        z-index: 100;
+        border-bottom-left-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
+        transition: transform 0.4s ease-in;
+    }
+
+    .header-item {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .header-item:hover {
+        text-decoration: underline dotted;
+    }
+
+    .header-list.menu--open {
+        transform: translateY(0);
+        transition: transform 0.4s ease-in;
+    }
+
+    .social {
+        margin-bottom: 0;
+    }
+
     /* Hero */
     .hero-left {
         margin-top: 10%;
@@ -923,6 +996,10 @@ small > a:visited {
         margin-bottom: auto;
     }
 
+    .work-item:last-child {
+        display: none;
+    }
+
     /* Faq */
     .faq-title {
         text-align: center;
@@ -933,34 +1010,19 @@ small > a:visited {
         margin-right: 14px;
         padding-left: 0;
     }
+
 }
 
 @media (max-width:425px) {
     /* Header */
-    .burger-menu {
-        display: flex;
-    }
 
-    .header-logo {
+    .header-logo__link {
         margin-right: 49px;
         margin-left: 18px;
+    }
+    
+    .header-logo {
         width: 54px;
-    }
-
-    .header-btn {
-        display: none;
-    }
-
-    .header-left {
-        order: 1;
-    }
-
-    .header-nav {
-        position: relative;
-    }
-
-    .header-item::before {
-        display: none;
     }
 
     .social {
@@ -970,14 +1032,4 @@ small > a:visited {
         text-align: center;
     }
 
-    .burger-inner {
-        display: block;
-    }
-
-    .header-nav > .header-list {
-        flex-direction: column;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-    }
 }

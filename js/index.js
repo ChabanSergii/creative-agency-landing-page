@@ -1,4 +1,12 @@
+const menuBtn = document.querySelector('.burger-menu');
+const menuMobile = document.querySelector('.header-list');
+
 window.addEventListener("DOMContentLoaded", function() {
+
+    /* Burger menu */
+    menuBtn.addEventListener('click', ()=> {
+        menuMobile.classList.toggle('menu--open');
+    })
 
     /* Sviper Slider */
     const swiper = new Swiper('.swiper', {
