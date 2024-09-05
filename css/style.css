@@ -1032,4 +1032,85 @@ small > a:visited {
         text-align: center;
     }
 
+    /* Hero */
+    .hero-container {
+       display: block;
+    }
+
+    .hero-left,
+    .hero-right {
+        width: 100%;
+    }
+
+    .hero-right {
+        margin-bottom: 20px;
+    }
+
+    /* about */
+    .nav-pills .nav-link {
+        width: 100px;
+    }
+
+    .about-tab__container {
+        display: block;
+    }
+
+    .about-tab__container > * {
+        width: 100%;
+    }
+
+    /* Work */
+    .work-top {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .work-sketch__description {
+        padding-left: 0;
+    }
+    .work-sketch,
+    .work-sketch__description {
+        width: 100%;
+    }
+
+    .work-bottom {
+        display: block;
+    }
+
+    .work-list,
+    .work-item {
+        width: 100%;
+    }
+
+    .work-item:last-child {
+        display: block;
+    }
+    .work-bottom__img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Footer */
+    .footer-container {
+        padding: 20px;
+    }
+
+    .footer-item:first-child{
+        display: block;
+        width: 100vw;
+    }
+
+    .footer-copiright {
+        margin-top: 0;
+    }
+
+    .footer-input,
+    .footer-btn {
+        margin-bottom: 15px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
 }
